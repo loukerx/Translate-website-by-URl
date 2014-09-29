@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--ADD META TAGS AS NECESSARY. ADD PAGE NAME TO FIRST ITEM IN TITLE TAG.-->
+<!-- Start generic metadata -->
+<meta name="keywords" content="Macquarie, University, Australia, staff, teaching, learning, innovation, education, research" />
+<meta name="description" content="One of Australia's leading universities. Recognised for high-quality research and unique undergraduate and postgraduate courses." />
+<meta name="Author" content="Macquarie University" />
+<meta name="viewport" content = "user-scalable=yes,width=1000" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><title>Macquarie University</title>
+<link rel="stylesheet" href="mq_templates/global/css/padding_margins.css" type="text/css" />
+<link rel="stylesheet" href="mq_templates/global/css/styles4.css" type="text/css" />
+<link rel="icon" href="mq_templates/global/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="mq_templates/global/images/favicon.ico" type="image/x-icon" />
+<script src="mq_templates/global/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<!--script type="text/javascript" src="parallax/js/jquery-1.10.1.min.js"></script-->
+<script type="text/javascript" src="mq_templates/global/js/advancedtracker.js"></script>
+<script type="text/javascript" src="mq_templates/global/js/homepage.js"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/jquery.fancybox.pack.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+<script type="text/javascript">
+var _gaq = _gaq || [];
+var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+_gaq.push(['_setAccount', 'UA-4086645-1'], ['_setDomainName', '.mq.edu.au'], ['_setAllowHash',false], ['_trackPageview'],['_trackPageLoadTime']);
+_gaq.push(['rollup._setAccount', 'UA-25264761-1'], ['rollup._setDomainName', '.mq.edu.au'], ['rollup._setAllowHash',false], ['rollup._trackPageview'],['rollup._trackPageLoadTime']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+</script>
+<!-- parallax css-->
+<link rel="stylesheet" type="text/css" href="parallax/css/parallax.css"/>
+<!--link rel="stylesheet" type="text/css" href="parallax/css/fonts.css"/-->
+<!--link rel="stylesheet" type="text/css" href="parallax/css/tooltip.css"/-->
+<!-- end parallax css -->
+<!-- parallax js -->
+<!--<script type="text/javascript" src="parallax/js/skrollr.min.js"></script>
+<script type="text/javascript" src="parallax/js/parallax.js"></script>
+<script type="text/javascript" src="parallax/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script type="text/javascript" src="parallax/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="parallax/js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript" src="parallax/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="parallax/js/jquery.ba-throttle-debounce.min.js"></script>
+<script type="text/javascript" src="parallax/js/tooltip.js"></script>
+<script type="text/javascript" src="parallax/js/jquery.onImagesLoad.min.js"></script>
+<script src="parallax/js/edge/Edge_edgePreload.js"></script>-->
+<!-- end parallax js -->
+<link rel="stylesheet" href="mq_templates/corporate/css/mq-home.css" type="text/css" />
+</head>
+<body id="mq" class="home">
+<div id="skrollr-body">
+<script type="text/javascript" src="mq_templates/corporate/js/combined.min.js"></script> 
+
+<!--START_COURSES_SEARCH_JS_CODE--> 
+<script type="text/javascript">
+jQuery(document).ready(function($) {   
+    if ($("input[name='query']").val() != '') {
+        clearWatermark();
+    }  
+    /**
+     * OneHelp 650714
+     * Versatag search (embedded code)
+     */
+    jQuery("form#course.search").submit(function() {
+		var sTag = '';
+    	var Term  = jQuery("input[name='query']").val();
+    	if(Term.length > 0)
+    	{
+        	sTag = '<scr'+'ipt type="text/javascript" src="http://ps.eyeota.net/pixel?pid=6nub2cv&t=js&sid=Macuni&search=' + Term + '"></scr' + 'ipt>';
+    	}
+    	// Eyeota Tag
+    	jQuery('#wrapper').append(sTag);
+	});
+    /* End OneHelp 650714*/
+});
+function selectSearch(form) {    
+    if (jQuery("input:radio[id='search_domestic']").attr("checked") == true) {      
+		
+         _gaq.push(['_trackPageview', '/search_for_a_course/domestic/'+encodeURI(jQuery('#query').val())]);
+        jQuery(form).attr("action","http://mq-search.funnelback.com/search/search.cgi");
+        
+    } else if (jQuery("input:radio[id='search_international']").attr("checked") == true) {        
+        _gaq.push(['_trackPageview', '/search_for_a_course/international/'+encodeURI(jQuery('#query').val())]);
+        jQuery("input[name='qry']", form).val( jQuery("input[name='query']", form).val() );
+        
+        jQuery(form).attr("action","http://www.international.mq.edu.au/study/areas_courselist.aspx");
+        
+    }
+}
+function clearWatermark() {
+    document.getElementById('query').style.backgroundImage = 'none';
+}
+function restoreWatermark() {    
+    document.getElementById('query').style.backgroundImage ="url('images/courses_search_watermark.gif')";
+}
+</script> 
+<!--END_COURSES_SEARCH_JS_CODE--> 
+
+<!--ADD CLASS 'TWO-COLUMN' TO BODY TAG TO REMOVE RIGHT COLUMN (COLUMN-3) FROM LAYOUT-->
+<div id="skip"><a href="#content_homepage">Skip to Content</a></div>
+<!-- BEGIN NO CHANGE SECTION -->
+<div id="wrapper">
+  <div id="banner">
+    <div id="logo"> <a href="http://www.mq.edu.au"><img src="http://www.mq.edu.au/mq_templates/global/images/logo.png" width="192" height="64" title="Macquarie University, Sydney" alt="Macquarie University, Sydney" /></a> </div>
+    <!-- logo -->
+    <div id="banner-nav">
+      <div class="stars"> <img alt="Macquarie University received 5 QS Stars" src="mq_templates/global/images/stars.png"/> </div>
+      <!--/nav-top-->
+      <div>
+        <div id="search-box"> 
+          <!-- start search area -->
+          <form action="http://www.mq.edu.au/search/search-results.html" id="cse-search-box">
+            <input type="hidden" name="cx" value="018228073491741698199:bz06o_gto80" />
+            <input type="hidden" name="cof" value="FORID:9" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <label for="search" class="hide">search</label>
+            <input type="text" name="q" id="search"  />
+            <input  type="submit" value="Search" class="button" name="sa" />
+          </form>
+          <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box"></script> 
+          <!-- end search area -->
+          <div id="nav-tabs">
+            <ul>
+              <li><a href="http://students.mq.edu.au/home/">Students</a></li>
+              <li><a href="http://staff.mq.edu.au/home/">Staff</a></li>
+            </ul>
+          </div>
+          <!--/nav-tabs--> 
+        </div>
+        <!--/search--> 
+        
+      </div>
+    </div>
+    <!--/banner-nav--> 
+  </div>
+  <!--/banner-->
+  <div>
+    <!-- start global nav -->
+
+ <script>
+ dataLayer = [];
+ </script>
+ <!-- Google Tag Manager -->
+ <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MQZTHB"
+ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+ '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+ })(window,document,'script','dataLayer','GTM-MQZTHB');</script>
+ <!-- End Google Tag Manager -->
+ 
+ <!-- Marketo Munchkin -->
+ <script type="text/javascript">
+ document.write(unescape("%3Cscript src='//munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));
+ </script>
+ <script>Munchkin.init('011-UBX-120');</script>
+ <!-- End Marketo Munchkin -->
+
+<div class="globalnav">
+  <div id="container">
+    <div id="mainNavBar"  class="globalnavbg"> 
+      <!--    <div id="header"></div>-->
+      <ul id="topnav">
+        <li class="first"> <a class="nav_first" href="http://mq.edu.au/study.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study']);"><span class="nav_text_nowrap">Study</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://courses.mq.edu.au/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/Find_a_course/']);">Find a course</a></li>
+              <li><a href="http://mq.edu.au/study/undergraduate/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/Undergraduate']);">Undergraduate</a></li>
+              <li><a href="http://mq.edu.au/study/postgraduate/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/Postgraduate']);">Postgraduate</a></li>
+              <li><a href="http://mq.edu.au/study/international/"  onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Study/International_Students']);">International students</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_third" href="http://www.mq.edu.au/international.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International']);"><span class="nav_text_nowrap">International</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.mq.edu.au/future_students/international/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International/Future_Students']);">Future students</a></li>
+              <li><a href="http://www.mq.edu.au/international/research/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International/Postgraduate_Research']);">Postgraduate research</a></li>
+			  <li><a href="http://www.mq.edu.au/international/information_for_partners/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/International/Information_for_Partners']);">Information for partners</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_fourth" href="http://www.mq.edu.au/research.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research']);"><span class="nav_text_nowrap">Research</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.research.mq.edu.au/about/research_office/research_strengths" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Strengths']);">Research strengths</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_@_macquarie/all_research_centres_at_macquarie_university" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Centres_Groups']);">Centres and groups</a></li>
+              <li><a href="http://www.hdr.mq.edu.au/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Higher_Degree_Research']);">Higher degree research</a></li>
+              <li><a href="http://www.mq.edu.au/newsroom/find-an-expert/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Find_an_Expert']);">Find an expert</a></li>
+              <li><a href="http://www.hdr.mq.edu.au/information_about/supervision" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Find_a_Supervisor']);">Find a supervisor</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_@_macquarie/cores" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Join_Us']);">Join us</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_commercialisation" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Commercialisation']);">Research commercialisation</a></li>
+              <li><a href="http://www.mq.edu.au/research/era/index.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/ERA_World_leading_research']);">ERA - world leading research</a></li>
+              <li><a href="http://www.researchonline.mq.edu.au/vital/access/manager/Index" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Publications']);">Research publications</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_office" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Research/Research_Contacts']);">Research contacts</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_fifth" href="http://www.mq.edu.au/on_campus.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus']);"><span class="nav_text_nowrap">On campus</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.students.mq.edu.au/support/accommodation/home/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Accommodation']);">Accommodation</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/catering_and_venue_hire/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Catering_Venue_Hire']);">Catering and venue hire</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/childcare/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Childcare']);">Childcare</a></li>
+              <li><a href="http://www.mq.edu.au/clinics/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Clinics']);">Clinics</a></li>
+              <li><a href="http://mq.edu.au/on_campus/diversity_and_inclusion/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Diversity_and_Inclusion']);">Diversity and inclusion</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/food_and_shopping/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Food_Shopping']);">Food and shopping</a></li>
+              <li><a href="http://www.mq.edu.au/transport/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Getting_to_Macquarie']);">Getting to Macquarie</a></li>
+              <li><a href="http://www.muh.org.au/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Hospital']);">Hospital</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/information_technology" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Information_Technology']);">Information technology</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/library/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Library']);">Library</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/maps/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Maps']);">Maps</a></li>
+              <li><a href="http://www.mq.edu.au/museums/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Museums_Collections']);">Museums and collections</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/project_updates/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Project_Updates']);">Project updates</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/security/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Security']);">Security</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/sport_and_recreation/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/Sport_Recreation']);">Sport and recreation</a></li>
+              <li><a href="http://city.mq.edu.au" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/On_Campus/City_Campus']);">City Campus</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_sixth" href="http://www.mq.edu.au/about_us.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us']);"><span class="nav_text_nowrap">About us</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.mq.edu.au/about_us/university_profile" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/University_Profile']);">University profile</a></li>
+              <li><a href="http://www.mq.edu.au/about/how_mq_works/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/How_Macquarie_Works']);">How Macquarie works</a></li>
+              <li><a href="http://www.mq.edu.au/about_us/strategy_and_initiatives/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Strategy_Initiatives']);">Strategy and initiatives</a></li>
+              <li><a href="http://www.mq.edu.au/about/faculties.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Faculties_Departments']);">Faculties and departments</a></li>
+              <li><a href="http://www.mq.edu.au/about/offices.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Offices_Units']);">Offices and units</a></li>
+              <li><a href="http://www.mq.edu.au/about_us/our_campuses/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Our_Campuses']);">Our campuses</a></li>
+              <li><a href="http://www.mq.edu.au/about_us/campus_master_plan/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Master_Plan']);">Master Plan</a></li>
+              <li><a href="http://www.mq.edu.au/newsroom/control.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/News']);">News</a></li>
+              <li><a href="http://www.mq.edu.au/about/events" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Events']);">Events</a></li>
+              <li><a href="http://www.mq.edu.au/about/jobs/index.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Job_Opportunities']);">Job opportunities</a></li>
+              <li><a href="http://www.mq.edu.au/about/calendar.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Important_Dates']);">Important dates</a></li>
+              <li><a href="http://www.mq.edu.au/about/contacts.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/About_Us/Contact_Us']);">Contact us</a></li>
+            </ul>
+          </div>
+        </li>
+        <li> <a class="nav_seventh" href="http://www.mq.edu.au/alumni.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Alumni_Supporters']);"><span class="nav_text_wrap">Alumni and supporters</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.alumni.mq.edu.au/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Alumni_Supporters/Alumni']);">Alumni</a></li>
+              <li><a href="http://www.mq.edu.au/supporting/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Alumni_Supporters/Supporting_Macquarie']);">Supporting Macquarie</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="last"> <a class="nav_eighth" href="http://www.mq.edu.au/business_community.php" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community']);"><span class="nav_text_wrap">Business and community</span></a>
+          <div class="sub">
+            <ul>
+              <li><a href="http://www.mq.edu.au/business_and_community/consultants_and_contractors/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Consultants_Contractors']);">Consultants and contractors</a></li>
+              <li><a href="http://mq.edu.au/business_and_community/employers" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Employers']);">Employers</a></li>
+              <li><a href="http://www.mq.edu.au/business_and_community/industry_partnerships" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Industry_Partnerships']);">Industry partnerships</a></li>
+              <li><a href="http://www.accommodation.mq.edu.au/landlords" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Landlords']);">Landlords</a></li>
+              <li><a href="http://www.mq.edu.au/newsroom/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Media']);">Media</a></li>
+              <li><a href="http://www.mq.edu.au/business_and_community/professional_and_community_engagement/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Participation_Community_Engagement']);">Professional And Community Engagement</a></li>
+              <li><a href="http://www.mq.edu.au/business_and_community/property_and_facilities/" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Property_Facilities']);">Property and facilities</a></li>
+              <li><a href="http://www.research.mq.edu.au/about/research_commercialisation" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Research_Commercialisation']);">Research commercialisation</a></li>
+              <li><a href="http://www.mq.edu.au/facilities.html" onclick="javascript: _gaq.push(['_trackPageview', '/public_gn/Business_Community/Services']);">Services</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <!-- end #mainNavBar --> 
+    </div>
+  </div>
+  <div class="break"></div>
+  <!-- end #container --> 
+  <!--  <div id="nav_bottom"></div>  --> 
+</div>
+<!-- end global nav -->
+  </div>
+  <!--/globalnav-->
+  <div class="break"></div>
+  <div id="content_homepage">
+    <div class="gallery_container">
+      <div class="wt-rotator">
+        <div class="screen">
+          <noscript>
+        
+          
+                   
+          <a href="http://www.hdr.mq.edu.au/information_about/research_training_degrees?utm_source=macquarie&utm_medium=banner&utm_campaign=mres" onclick="_gaq.push(['rollup._trackEvent', 'MQ Homepage', 'banner', 'Master of Research']);"><img src="mq_templates/corporate/homepage_banner_rotator/images/2014/MRes2014-MQ-top-998x248-v4.jpg" alt="Masters of Research" /></a>
+          
+            
+         
+          <a href="http://jubilee.mq.edu.au/homepage/1" onclick="_gaq.push(['rollup._trackEvent', 'MQ Homepage', 'banner', 'Jubilee']);"><img src="mq_templates/corporate/homepage_banner_rotator/images/2014/Jubilee-aug2014-998x248.jpg" alt="Share your stories - be part of out 50 year Jubilee celebrations" /></a>
+        
+        
+          <!--<a href="http://www.mq.edu.au/future_students/international/why_choose_macquarie/our_reputation/university_rankings/"><img src="mq_templates/corporate/homepage_banner_rotator/images/2014/QS5star-998x248.jpg" alt="Get a five star education: With five QS stars* across all categories, your Macquarie experience will be world class. *QS2013" /></a>-->
+          </noscript>
+        </div>
+        <div class="c-panel">
+          <div class="buttons">
+            <div class="prev-btn"></div>
+            <div class="play-btn"></div>
+            <div class="next-btn"></div>
+          </div>
+          <div class="thumbnails">
+            <ul>
+        
+                  <li><a href="mq_templates/corporate/homepage_banner_rotator/images/2014/MRes2014-MQ-top-998x248-v4.jpg"></a><a href="http://www.hdr.mq.edu.au/information_about/research_training_degrees?utm_source=macquarie&utm_medium=banner&utm_campaign=mres" onclick="_gaq.push(['rollup._trackEvent', 'MQ Homepage', 'banner', 'Master of Research']);"></a></li>  
+          
+           
+              <li><a href="mq_templates/corporate/homepage_banner_rotator/images/2014/Jubilee-aug2014-998x248.jpg"></a><a href="http://jubilee.mq.edu.au/homepage/1" onclick="_gaq.push(['rollup._trackEvent', 'MQ Homepage', 'banner', 'Jubilee']);"></a></li>
+              <!--<li> <a href="mq_templates/corporate/homepage_banner_rotator/images/2014/QS5star-998x248.jpg"></a> <a href="http://www.mq.edu.au/future_students/international/why_choose_macquarie/our_reputation/university_rankings/" onclick="javascript: _gaq.push(['rollup._trackEvent', 'MQ Homepage', 'banner', 'QS 5 star']);"></a></li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- endMain Gallery container --> 
+    <!-- start parallax --> 
+    <!-- <div class="parallax" >
+          <section  id="explore" class="frame-1" data-0="background-position:0px -100px;" data-1500="background-position:0px 0px;"> <div style="padding: 45px;">
+          	<div class="frame-1-left">
+          	<h1 class="frame-1-heading">Not your traditional University.</h1>
+            <p class="quote">Our classrooms extend beyond lecture theatres. <br />It's part of our commitment to practical<br /> real-world learning for our students.</p>
+            </div>
+          	<p class="call-to-action"><a href="#explore" class="scroll" onClick="_gaq.push(['_trackEvent', 'Parallax', 'Explore', 'Button clicked']);">Explore &#8744;</a></p>
+            <div class="preloader">
+                <div class="circle"></div>
+                <div class="circle1"></div>
+            </div>
+            </div>
+          </section>
+            <div class="parallax-placeholder">
+            
+            </div>
+    </div>--> 
+    <!-- end parallax -->
+    <div class="mq_home">
+      <div class="course-finder">
+        <div class="col1">
+          <div class="head">Find a course</div>
+          <!--<p>Search or browse for the right course for you.</p>--> 
+        </div>
+        <div class="col2">
+          <form id="course" class="search" method="get" action="http://mq-search.funnelback.com/search/search.cgi">
+            <div class="input-append input-square input-append-small">
+              <input size="20" type="search" name="query" />
+              <input type="hidden" name="collection" value="mq-edu-coursefinder" id="type_domestic">
+              <input type="hidden" value="0" name="daat">
+              <input type="hidden" value="simple" name="form">
+              <input type="hidden" value="" name="meta_v_sand">
+              <input id="meta_Y_orsand" type="hidden" value="2015" name="meta_Y_orsand">
+              <button class="btn" type="submit">Go</button>
+            </div>
+          </form>
+        </div>
+        <div class="col3">
+          <button class="btn" id="browse-course" type="button">Quick links<i class="icon course"></i></button>
+          <div class="sub-dropdown" id="sub-dropdown">
+            <ul>
+              <li><a href="http://handbook.mq.edu.au/" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/handbook']);">Handbook &raquo</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/library/" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/library']);">Library &raquo</a></li>
+              <li><a href="http://www.mq.edu.au/on_campus/maps/campus_map/" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/campusmap']);">Campus map &raquo</a></li>
+              <li><a href="http://www.mq.edu.au/about/jobs/" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/jobs']);">Job Opportunities &raquo;</a></li>
+              <li><a href="http://www.mq.edu.au/clinics/" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/clinics']);">Clinics &raquo;</a></li>
+              <li><a href="http://www.mq.edu.au/supporting/" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/gift']);">Making a gift &raquo;</a></li>
+              <li><a href="http://www.mq.edu.au/about/calendar.html" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/dates']);">Important Dates &raquo;</a></li>
+              <li><a href="http://www.mq.edu.au/about/faculties.html" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/faculties']);">Faculties and Departments &raquo;</a></li>
+              <li><a href="http://www.mq.edu.au/about/profile/welcometocountry.html" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/welcomeToCountry']);">Welcome to Country &raquo;</a></li>
+              <li><a href="http://www.mq.edu.au/about/events/" onclick="javascript: _gaq.push(['_trackPageview', '/quicklinks/events']);">Events &raquo;</a></li>
+              <li><a href="http://student.mq.edu.au/notices_events/notices/1800_care_mq" onclick="javascript: _gaq.push(['_trackPageview', '/testimonials/caremq']);">1800 CARE MQ &raquo;</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--end course-finder-->
+      <div class="break"></div>
+      <div class="rss-content">
+        <div class="left-container">
+          <div class="news">
+            <div class="head">Latest News</div>
+            <div>
+               <div class="thumbnail-feature">
+               <a href="http://mq.edu.au/newsroom/2014/09/17/top-teachers-recognised/" onclick="javascript: _gaq.push(['_trackPageview', '/news/Topteachersrecognised']);"><img width="392" height="229" src="http://mq.edu.au/newsroom/wp-content/uploads/2014/09/Messer-392x229.jpg" class="attachment-mq-feature wp-post-image" alt="Messer" /></a></div>
+                <div class="info-feature">
+                  <h4><a href="http://mq.edu.au/newsroom/2014/09/17/top-teachers-recognised/" onclick="javascript: _gaq.push(['_trackPageview', '/news/Topteachersrecognised']);">Top teachers recognised</a></h4>
+                   <i class="date-feature">September 17, 2014</i>
+                  <p>Arts academics receive national award for student learning initiatives</p>
+                </div>             
+     </div>      
+                                <div class="break"></div>
+            <div class="sub-news">  			<div class="news-articles">
+               <div class="thumbnail" >
+               <a href="http://mq.edu.au/newsroom/2014/09/18/intellectual-traditions-not-just-cultural-knowledge-the-third-patyegarang-oration/" onclick="javascript: _gaq.push(['_trackPageview', '/news/ThirdPatyegarangOration']);"><img width="185" height="108" src="http://mq.edu.au/newsroom/wp-content/uploads/2014/09/2014-9-17-ChrisStacey-35-185x108.jpg" class="attachment-mq-home-pagenews wp-post-image" alt="Associate Professor Karen Martin from the School of Education and Professional Studies at Griffith University challenged the audience at Macquarie’s third annual Patyegarang Oration" /></a></div>
+                <div class="info">
+                  <h4><a href="http://mq.edu.au/newsroom/2014/09/18/intellectual-traditions-not-just-cultural-knowledge-the-third-patyegarang-oration/" onclick="javascript: _gaq.push(['_trackPageview', '/news/ThirdPatyegarangOration']);">Third Patyegarang Oration</a></h4>
+                  <i class="date">September 18, 2014</i>
+                  <!--<p></p>-->
+                </div>             
+              </div>              
+ 			<div class="news-articles">
+               <div class="thumbnail" >
+               <a href="http://mq.edu.au/newsroom/2014/09/18/families-take-part-in-world-leading-genetics-research-at-williams-syndrome-australia-conference/" onclick="javascript: _gaq.push(['_trackPageview', '/news/FamiliesuniteforWilliamssyndromeconference']);"><img width="185" height="108" src="http://mq.edu.au/newsroom/wp-content/uploads/2014/09/WebQualityImage_WS_conference1-215x161-185x108.jpg" class="attachment-mq-home-pagenews wp-post-image" alt="Dianne Petrie OAM and Dr Melanie Porter" /></a></div>
+                <div class="info">
+                  <h4><a href="http://mq.edu.au/newsroom/2014/09/18/families-take-part-in-world-leading-genetics-research-at-williams-syndrome-australia-conference/" onclick="javascript: _gaq.push(['_trackPageview', '/news/FamiliesuniteforWilliamssyndromeconference']);">Families unite for Williams syndrome conference</a></h4>
+                  <i class="date">September 17, 2014</i>
+                  <!--<p></p>-->
+                </div>             
+              </div>              
+ 			<div class="news-articles">
+               <div class="thumbnail" >
+               <a href="http://mq.edu.au/newsroom/2014/09/18/dwarf-galaxy-has-bizarre-supermassive-black-hole/" onclick="javascript: _gaq.push(['_trackPageview', '/news/Dwarfgalaxy&#8217;s‘bizarre’blackhole']);"><img width="185" height="108" src="http://mq.edu.au/newsroom/wp-content/uploads/2014/09/M60_ucd1-black-hole-185x108.jpg" class="attachment-mq-home-pagenews wp-post-image" alt="A new study has discovered the smallest galaxy yet known to harbor a supermassive black hole." /></a></div>
+                <div class="info">
+                  <h4><a href="http://mq.edu.au/newsroom/2014/09/18/dwarf-galaxy-has-bizarre-supermassive-black-hole/" onclick="javascript: _gaq.push(['_trackPageview', '/news/Dwarfgalaxy&#8217;s‘bizarre’blackhole']);">Dwarf galaxy&#8217;s ‘bizarre’ black hole</a></h4>
+                  <i class="date">September 17, 2014</i>
+                  <!--<p></p>-->
+                </div>             
+              </div>              
+                       
+ </div>
+            <div class="break"></div>
+            <div class="more"><a href="http://www.mq.edu.au/newsroom/">View more news &raquo;</a></div>
+          </div>
+          <div class="contact">
+            <div class="head">Contact Details</div>
+            <div class="general-enquiries">
+              <div class="head">General Enquiries</div>
+              <div class="general-tel"><b>T:</b> +61 2 9850 7111</div>
+              <ul class="unstyled">
+                <li><a href="https://www.facebook.com/macquarieuni" title="facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                <li><a href="https://twitter.com/Macquarie_Uni" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li><a href="http://www.mq.edu.au/newsroom/?feed=rss2" title="RSS" target="_blank"><i class="icon-youtube"></i></a></li>
+                <li><a href="http://www.youtube.com/user/MacquarieUniversity" title="YouTube" target="_blank"><i class="icon-rss"></i></a></li>
+                <li><a href="http://instagram.com/macquarieuni" title="Instagram" target="_blank"><i class="icon-instagram"></i></a></li>
+              </ul>
+              <div class="break"></div>
+              <div class="more"><a href="http://mq.edu.au/about/social-media.html">Social media directory &raquo;</a></div>
+            </div>
+            <div class="contact-details">
+              <p> <b>Domestic student enquiries </b><br/>
+                T: +61 2 9850 6410<br/>
+                <br/>
+                <b>International student enquiries </b><br/>
+                T: +61 2 9850 7346<br/>
+                <br/>
+              </p>
+            </div>
+            <div class="contact-staff"> <a href="http://www.mq.edu.au/about/contacts.html">
+              <button class="btn" id="askus" type="button"><i class="icon ask-us"></i>Ask us a question</button>
+              </a>
+              <div class="head">Contact Staff</div>
+              <form class="search-staff" method="get" action="https://mypassword.mq.edu.au/directory">
+                <div class="input-append input-square input-append-small">
+                  <input size="20" placeholder="Enter name..." type="search" name="SearchStr" id="searchstaff" />
+                  <select name="SearchCat" size="2" class="hide">
+                    <option selected="selected" value="Full Name">Full Name</option>
+                  </select>
+                  <button class="btn" type="submit" value="Search">GO</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="events">
+          <div class="b_innerContainer">
+            <div class="events_pics_container">
+                <div id="fade" class="events_pics">
+                  <a
+	href="
+        http://www.mq.edu.au/uniinaday?utm_source=Macquarie&utm_medium=Tile&utm_campaign=Uniinaday
+		 
+      "
+	onclick="javascript: _gaq.push(['_trackPageview', '']);">
+    <img
+	src="/mq_templates/corporate/images/new_mq_homepage/at_macquarie/2014/Uni-in-a-Day2014-homepage355x396tile.jpg"
+	width="355" height="390"
+	alt="Uni in a Day 2014"
+	title="Uni in a Day 2014" /></a>
+	
+	
+	                  <!--readfile('http://www.mq.edu.au/mq_templates/corporate/createbanners.php?size=small'); --> 
+                </div>
+                <div class="break"></div>
+                <div class="head">Events</div>
+                <div class="up-comming-events"> 
+<div class="date-box"><div class="day">21</div>	
+	<div class="month">Sep</div>
+</div>
+               <div class="thumbnail"><a href="http://www.mq.edu.au/about/events/view/movies-at-macquarie-identity-thief/" onclick="javascript: _gaq.push(['_trackPageview', '/news/']);"></a></div>
+                <div class="info">
+                  <h4><a href="http://www.mq.edu.au/about/events/view/movies-at-macquarie-identity-thief/" onclick="javascript: _gaq.push(['_trackPageview', '/news/']);">Movies at Macquarie- Identity Thief</a></h4>
+                  <p>
+				  Sunday 21 September, 6pm - 9pm                  </p>
+                </div>  
+<div class="break"></div>                         
+
+<div class="date-box"><div class="day">19</div>	
+	<div class="month">Sep</div>
+</div>
+               <div class="thumbnail"><a href="http://www.mq.edu.au/about/events/view/macquarie-university-astronomical-observatory-12/" onclick="javascript: _gaq.push(['_trackPageview', '/news/']);"></a></div>
+                <div class="info">
+                  <h4><a href="http://www.mq.edu.au/about/events/view/macquarie-university-astronomical-observatory-12/" onclick="javascript: _gaq.push(['_trackPageview', '/news/']);">Astronomical Observatory</a></h4>
+                  <p>
+				  Friday 19 September, 7pm - 8.30pm                  </p>
+                </div>  
+<div class="break"></div>                         
+
+<div class="date-box"><div class="day">17</div>	
+	<div class="month">Sep</div>
+</div>
+               <div class="thumbnail"><a href="http://www.mq.edu.au/about/events/view/annual-patyegarang-oration/" onclick="javascript: _gaq.push(['_trackPageview', '/news/']);"></a></div>
+                <div class="info">
+                  <h4><a href="http://www.mq.edu.au/about/events/view/annual-patyegarang-oration/" onclick="javascript: _gaq.push(['_trackPageview', '/news/']);">Annual Patyegarang Oration</a></h4>
+                  <p>
+				  Wednesday 17 September, 12pm - 2pm                  </p>
+                </div>  
+<div class="break"></div>                         
+   </div>
+                <div class="more"><a href="http://www.mq.edu.au/about/events">View more events &raquo;</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="break"></div>
+          </div>
+</div>
+<!--/wrapper-->
+<div class="break"></div>
+<div id="wrapper_bottom">
+  <div id="content_bottom">
+    <div>
+          </div>
+    <div id="copyright">
+      <p class="left">&copy; Copyright Macquarie University | <a href="http://www.mq.edu.au/about_us/how_mq_works/privacy/">Privacy</a> | <a href="http://www.mq.edu.au/accessibility.html">Accessibility Information</a><br />
+        Site Publisher:  Macquarie University, Sydney Australia | Last Updated: 
+        <!-- #BeginDate format:fcSw1 -->Saturday, 13 September, 2014<!-- #EndDate --> 
+      </p>
+      <!--change last updated date-->
+      <p class="left text-right">ABN 90 952 801 237 | CRICOS Provider No 00002J</p>
+      <div class="break"></div>
+    </div>
+    <!--/copyright--> 
+  </div>
+  <!--/content_bottom--> 
+</div>
+<!--/wrapper_bottom--> 
+
+<script type='text/javascript'>
+//Script for marketing
+var ebRand = Math.random()+'';
+ebRand = ebRand * 1000000;
+//<![CDATA[  
+document.write('<scr'+'ipt src="HTTP://bs.serving-sys.com/BurstingPipe/ActivityServer.bs?cn=as&amp;ActivityID=22670&amp;rnd=' + ebRand + '"></scr'+'ipt>');
+//]]>
+</script>
+<noscript>
+<img width="1" height="1" style="border:0" src="HTTP://bs.serving-sys.com/BurstingPipe/ActivityServer.bs?cn=as&amp;ActivityID=22670&amp;ns=1"/>
+</noscript>
+<script src="mq_templates/corporate/js/homepageSearch.js" type="text/javascript"></script>
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-1.newrelic.com","43110574b8","1902075","NAcDMUAACBIEAEJbWg1NNBdbTg8PAQZOHEULEg==",0,2623,new Date().getTime(),"","","","",""]);</script></body>
+</html>
